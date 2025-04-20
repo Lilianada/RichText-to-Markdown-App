@@ -1,5 +1,4 @@
-# RichText to Markdown App - This README.md was created using [https://richtext-to-markdown.vercel.app/]Richtext-to-markdown.vercel.app
-
+# RichText to Markdown App - This README.md was created using [Richtext-to-markdown.vercel.app](https://richtext-to-markdown.vercel.app/)
 A blazing-fast, privacy-focused tool for converting rich text, HTML, or plain text into clean, structured Markdown. Designed for developers, writers, students, and content creators who value productivity, accuracy, and a modern user experience.
 
 ## 🚀 Features
@@ -87,4 +86,4 @@ MIT
 ---
 
 *Keywords: text to markdown, markdown converter, rich text to markdown, markdown editor, privacy-focused, live preview, productivity, developer tools, modern UI*
-# Text-to-Markdown-App
+# RichText-to-Markdown-App
