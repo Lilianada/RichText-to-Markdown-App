@@ -1,4 +1,4 @@
-# Text to Markdown App
+# RichText to Markdown App - This README.md was created using [https://richtext-to-markdown.vercel.app/]Richtext-to-markdown.vercel.app
 
 A blazing-fast, privacy-focused tool for converting rich text, HTML, or plain text into clean, structured Markdown. Designed for developers, writers, students, and content creators who value productivity, accuracy, and a modern user experience.
 
@@ -40,7 +40,7 @@ A blazing-fast, privacy-focused tool for converting rich text, HTML, or plain te
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/text-to-markdown-app.git
+   git clone https://github.com/lilianada/richtext-to-markdown-app.git
    cd text-to-markdown-app
    ```
 2. **Install dependencies:**
