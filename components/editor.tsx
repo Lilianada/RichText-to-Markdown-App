@@ -6,7 +6,7 @@ import "prismjs/components/prism-css"
 import "prismjs/components/prism-scss"
 import { Textarea } from "@/components/ui/textarea"
 
-interface CodeEditorProps {
+interface EditorProps {
   value: string
   onChange?: (value: string) => void
   placeholder?: string
@@ -16,7 +16,7 @@ interface CodeEditorProps {
   "aria-label"?: string
 }
 
-export default function CodeEditor({
+export default function Editor({
   value,
   onChange,
   placeholder = "Enter code...",
@@ -24,7 +24,7 @@ export default function CodeEditor({
   className = "",
   height = "h-full",
   "aria-label": ariaLabel,
-}: CodeEditorProps) {
+}: EditorProps) {
   const preRef = useRef<HTMLPreElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 

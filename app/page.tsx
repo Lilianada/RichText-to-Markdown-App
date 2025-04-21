@@ -1,51 +1,50 @@
-import UnitConverter from "@/components/unit-converter"
+'use client'
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { Github } from "lucide-react"
 
-export const metadata = {
-  title: "CSS Unit Converter | LilysLab",
-  description: "Convert between px, em, rem, vw, %, and more with LilysLab's fast, modern CSS unit converter.",
-  keywords: [
-    "css unit converter",
-    "px to rem",
-    "rem to em",
-    "css conversion",
-    "responsive design",
-    "web development tools"
-  ],
-  openGraph: {
-    title: "CSS Unit Converter | LilysLab",
-    description: "Convert between px, em, rem, vw, %, and more with LilysLab's fast, modern CSS unit converter.",
-    url: "https://lilyslab.xyz/",
-    type: "website",
-    images: [
-      {
-        url: "/images/logo.png",
-        width: 1200,
-        height: 1200,
-        alt: "LilysLab CSS Unit Converter logo",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "CSS Unit Converter | LilysLab",
-    description: "Convert between px, em, rem, vw, %, and more with LilysLab's fast, modern CSS unit converter.",
-    images: [
-      {
-        url: "/images/logo.png",
-        alt: "LilysLab CSS Unit Converter logo",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://lilyslab.xyz/",
-  },
-};
 
 export default function Home() {
   return (
-   
-      <div className="p-4 h-full">
-        <UnitConverter />
+
+    <div className="p-4 h-full">
+      <motion.div
+        className="flex-1 flex flex-col space-y-6 items-center justify-center h-full"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}>
+
+        <div className="container mx-auto px-4 py-24 flex flex-col items-center relative z-10">
+          {/* Logo above H1 */}
+          <Image src="/images/logo.png" alt="Logo" width={60} height={60} className="mb-4" />
+          <h1 className="text-2xl md:text-4xl font-bold text-zinc-800 dark:text-zinc-200 text-center mb-3">
+            Richtext to Markdown Editor
+          </h1>
+          <p className="max-w-2xl text-lg md:text-xl text-zinc-800 dark:text-zinc-200 text-center mb-8">
+            Convert your rich text to markdown with ease.
+          </p>
+          <div className="flex justify-center gap-3">
+          <a href="/editor">
+            <Button
+              type="submit"
+              className="bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold px-6 py-2 rounded-md hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow"
+            >
+              Get Started
+            </Button>
+            </a>
+            <a href="https://github.com/Lilianada/RichText-to-Markdown-Editor" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold px-6 py-2 rounded-md hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow">
+              <Github className="mr-2 h-5 w-5" />
+              Star on GitHub
+            </Button>
+          </a>
+          </div>
         </div>
+
+
+      </motion.div>
+    </div>
   )
 }

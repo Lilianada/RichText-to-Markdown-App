@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -65,18 +66,20 @@
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 0 0% 83.1%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
+    font-family: 'JetBrains Mono', monospace !important;
   }
   code,
   pre,
@@ -215,4 +218,69 @@ main::before {
   text-align: right;
   width: 2.5em;
   padding-right: 0.5em;
+}
+
+/* Quill Editor Styles */
+.quill-container {
+  @apply h-full flex flex-col;
+}
+
+.quill-container .ql-toolbar {
+  @apply flex-shrink-0 rounded-t-md border border-zinc-200 border-b-0 bg-gray-50 p-2 sticky top-0 z-10;
+}
+
+html.dark .quill-container .ql-toolbar {
+  @apply border-zinc-700 bg-zinc-800;
+}
+
+/* Dark mode Quill Icons */
+html.dark .quill-container .ql-toolbar .ql-stroke {
+  @apply stroke-zinc-300;
+}
+html.dark .quill-container .ql-toolbar .ql-fill {
+  @apply fill-zinc-300;
+}
+html.dark .quill-container .ql-toolbar .ql-picker-label {
+  @apply text-zinc-300;
+}
+
+.quill-container .ql-container {
+  @apply flex-grow rounded-b-md border border-zinc-200 h-full overflow-hidden text-sm bg-white relative;
+  line-height: 1.25rem;
+}
+
+html.dark .quill-container .ql-container {
+  @apply border-zinc-700 bg-zinc-900;
+}
+
+/* Read-only Quill Container */
+.quill-container .ql-container.ql-disabled {
+  @apply rounded-md bg-zinc-100;
+}
+
+html.dark .quill-container .ql-container.ql-disabled {
+  @apply bg-zinc-800;
+}
+
+.quill-container .ql-editor {
+  @apply h-full overflow-y-auto p-3 text-zinc-900;
+}
+
+html.dark .quill-container .ql-editor {
+  @apply text-zinc-200;
+}
+
+.quill-container .ql-editor.ql-blank::before {
+  @apply text-zinc-400 not-italic absolute left-3 right-3 top-3 pointer-events-none;
+}
+
+html.dark .quill-container .ql-editor.ql-blank::before {
+  @apply text-zinc-500;
+}
+/* End Quill Editor Styles */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
