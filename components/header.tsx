@@ -50,25 +50,17 @@ export default function Header() {
             </Button>
           </Link>
           <Link href="/cheat-sheet" className="flex items-center gap-1 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-accent/50">
-          <BookMarked className="h-4 w-4" />
-             <span>Cheat Sheet</span>
+            <BookMarked className="h-4 w-4" />
+            <span>Cheat Sheet</span>
           </Link>
-          {/* <Button
-             variant="ghost"
-             size="sm"
-             className="flex items-center gap-1 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-accent/50"
-          >
-             <BookMarked className="h-4 w-4" />
-             <span>Cheat Sheet</span>
-          </Button> */}
           <Button
-             variant="ghost"
-             size="sm"
-             onClick={() => setIsAboutOpen(true)}
-             className="flex items-center gap-1 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-accent/50"
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsAboutOpen(true)}
+            className="flex items-center gap-1 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-accent/50"
           >
-             <Info className="h-4 w-4" />
-             <span>About</span>
+            <Info className="h-4 w-4" />
+            <span>About</span>
           </Button>
 
           {mounted && (
@@ -104,32 +96,48 @@ export default function Header() {
               </DropdownMenu.Item>
               <DropdownMenu.Separator className="my-1 bg-border h-px" />
               <DropdownMenu.Item asChild>
-                  <button
-                      type="button"
-                      className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent text-sm text-foreground w-full"
-                      onClick={() => setIsCheatSheetOpen(true)}
-                  >
-                      <BookMarked className="h-4 w-4" />
-                      Cheat Sheet
-                  </button>
+                <button
+                  type="button"
+                  className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent text-sm text-foreground w-full"
+                  onClick={() => setIsCheatSheetOpen(true)}
+                >
+                  <BookMarked className="h-4 w-4" />
+                  Cheat Sheet
+                </button>
               </DropdownMenu.Item>
               <DropdownMenu.Separator className="my-1 bg-border h-px" />
-               <DropdownMenu.Item asChild>
-                 <button
-                   type="button"
-                   className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent text-sm text-foreground w-full"
-                   onClick={() => setIsAboutOpen(true)}
-                 >
-                   <Info className="h-4 w-4" />
-                   About
-                 </button>
-               </DropdownMenu.Item>
-             </DropdownMenu.Content>
-           </DropdownMenu.Root>
-           <AboutDialog open={isAboutOpen} onOpenChange={setIsAboutOpen} />
-           <CheatSheetDialog open={isCheatSheetOpen} onOpenChange={setIsCheatSheetOpen} />
-         </div>
-       </div>
-     </motion.header>
-   )
- }
+              <DropdownMenu.Item >
+                {mounted && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleThemeToggle}
+                    className="flex items-center justify-start gap-2 px-3 py-2 rounded hover:bg-accent text-sm text-foreground w-full"
+                    aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                  >
+                    {resolvedTheme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                    Toggle theme
+                  </Button>
+                )}
+              </DropdownMenu.Item>
+              <DropdownMenu.Separator className="my-1 bg-border h-px" />
+              <DropdownMenu.Item asChild>
+                <button
+                  type="button"
+                  className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent text-sm text-foreground w-full"
+                  onClick={() => setIsAboutOpen(true)}
+                >
+                  <Info className="h-4 w-4" />
+                  About
+                </button>
+              </DropdownMenu.Item>
+            </DropdownMenu.Content>
+          </DropdownMenu.Root>
+          <AboutDialog open={isAboutOpen} onOpenChange={setIsAboutOpen} />
+          <CheatSheetDialog open={isCheatSheetOpen} onOpenChange={setIsCheatSheetOpen} />
+
+        </div>
+      </div>
+    </motion.header>
+  )
+}

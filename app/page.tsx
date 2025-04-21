@@ -18,11 +18,11 @@ export default function Home() {
 
         <div className="container mx-auto px-4 py-24 flex flex-col items-center relative z-10">
           {/* Logo above H1 */}
-          <Image src="/images/logo.png" alt="Logo" width={60} height={60} className="mb-4" />
+          <Image src="/images/logo.png" alt="Logo" width={60} height={60} className="mb-6" />
           <h1 className="text-2xl md:text-4xl font-bold text-zinc-800 dark:text-zinc-200 text-center mb-3">
             Richtext to Markdown Editor
           </h1>
-          <p className="max-w-2xl text-lg md:text-xl text-zinc-800 dark:text-zinc-200 text-center mb-8">
+          <p className="max-w-2xl text-base md:text-lg text-zinc-800 dark:text-zinc-200 text-center mb-8">
             Convert your rich text to markdown with ease.
           </p>
           <div className="flex justify-center gap-3">
