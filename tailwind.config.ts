@@ -21,6 +21,7 @@ const config = {
     extend: {
       backgroundImage: {
         'noise': "url('/images/Noise.png')",
+        'gradient': "url('/images/gradient.png')",
       },
       colors: {
         border: "hsl(var(--border))",

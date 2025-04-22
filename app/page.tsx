@@ -16,7 +16,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}>
 
-        <div className="container mx-auto px-4 py-24 flex flex-col items-center relative z-10">
+        <div className="container mx-auto px-4 py-24 flex flex-col items-center relative z-10 bg-gradient-radial from-pink-500/70 via-transparent to-transparent">
           {/* Logo above H1 */}
           <Image src="/images/logo.png" alt="Logo" width={60} height={60} className="mb-6" />
           <h1 className="text-2xl md:text-4xl font-bold text-zinc-800 dark:text-zinc-200 text-center mb-3">

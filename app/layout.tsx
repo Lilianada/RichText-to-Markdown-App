@@ -105,7 +105,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main className="flex h-screen flex-col bg-background dark:bg-[#111] transition-colors duration-300 gap-4 main-noise-bg">
+          <main className="flex h-screen flex-col bg-background dark:bg-[#0d0d0d] transition-colors duration-300 gap-4 main-noise-bg">
             <Header />
             {children}
             <Toaster />
